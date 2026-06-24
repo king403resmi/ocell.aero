@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://king403.ocell.aero/sitemap.xml
