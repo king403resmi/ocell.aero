@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <meta name="theme-color" content="{{ site.theme_bg }}">
+  <link rel="icon" href="{{ '/assets/img/icon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  {% include schema.html %}
+</head>
+<body class="layout-regional">
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <header class="reg-banner">
+    <div class="wrap reg-banner__content">
+      <span class="reg-badge">Regional Hub</span>
+      <a class="reg-title" href="{{ '/' | relative_url }}">{{ site.site_name }}</a>
+      <p>{{ site.description }}</p>
+    </div>
+    <nav class="reg-nav wrap">{% include nav.html %}</nav>
+  </header>
+  <main id="main" class="wrap page page--regional">{{ content }}</main>
+  {% include footer.html %}
+</body>
+</html>

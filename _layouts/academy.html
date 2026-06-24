@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <meta name="theme-color" content="{{ site.theme_bg }}">
+  <link rel="icon" href="{{ '/assets/img/icon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  {% include schema.html %}
+</head>
+<body class="layout-academy">
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <div class="academy-shell">
+    <aside class="academy-sidebar">
+      <a class="academy-brand" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/img/icon.svg' | relative_url }}" alt="" width="40" height="40">
+        <strong>{{ site.site_name }}</strong>
+      </a>
+      <p class="academy-tag">{{ site.description }}</p>
+      <nav class="academy-nav">{% include nav.html %}</nav>
+    </aside>
+    <div class="academy-main">
+      <main id="main" class="page page--academy">{{ content }}</main>
+      {% include footer.html %}
+    </div>
+  </div>
+</body>
+</html>

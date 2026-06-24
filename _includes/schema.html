@@ -1,0 +1,37 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site.url }}/#organization",
+      "name": "KING403",
+      "url": "{{ site.official_brand }}",
+      "email": "hello@king403.com",
+      "foundingDate": "2020",
+      "sameAs": [
+        {%- for u in site.same_as -%}
+        {{ u | jsonify }}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": "{{ site.site_name }}",
+      "publisher": { "@id": "{{ site.url }}/#organization" },
+      "inLanguage": "id"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ page.url | absolute_url }}#webpage",
+      "url": "{{ page.url | absolute_url }}",
+      "name": {{ page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "inLanguage": "id"
+    }
+  ]
+}
+</script>

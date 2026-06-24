@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <meta name="theme-color" content="{{ site.theme_bg }}">
+  <link rel="icon" href="{{ '/assets/img/icon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  {% include schema.html %}
+</head>
+<body class="layout-editorial">
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <header class="editorial-head">
+    <div class="wrap editorial-head__inner">
+      <a class="editorial-logo" href="{{ '/' | relative_url }}">{{ site.site_name }}</a>
+      <p class="editorial-mast">{{ site.description }}</p>
+      <nav class="editorial-nav">{% include nav.html %}</nav>
+    </div>
+  </header>
+  <main id="main" class="wrap page page--editorial">
+    <article class="editorial-article">{{ content }}</article>
+  </main>
+  {% include footer.html %}
+</body>
+</html>

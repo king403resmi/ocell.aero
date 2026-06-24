@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <meta name="theme-color" content="{{ site.theme_bg }}">
+  <link rel="icon" href="{{ '/assets/img/icon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  {% include schema.html %}
+</head>
+<body class="layout-lab">
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <header class="lab-strip">
+    <div class="wrap lab-strip__inner">
+      <a class="lab-id" href="{{ '/' | relative_url }}">
+        <code>lab</code> {{ site.site_name }}
+      </a>
+      <nav class="lab-nav">{% include nav.html %}</nav>
+    </div>
+  </header>
+  <main id="main" class="wrap page page--lab">{{ content }}</main>
+  {% include footer.html %}
+</body>
+</html>

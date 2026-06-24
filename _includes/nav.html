@@ -1,0 +1,10 @@
+<ul class="site-nav__links">
+  {% assign nav_items = "beranda|/|Beranda,tentang|/tentang/|Tentang,faq|/faq/|FAQ,profil|/profil-digital/|Profil Digital,jaringan|/jaringan/|Jaringan,kontak|/kontak/|Kontak" | split: "," %}
+  {% for item in nav_items %}
+    {% assign parts = item | split: "|" %}
+    {% assign key = parts[0] %}
+    {% assign href = parts[1] %}
+    {% assign label = parts[2] %}
+    <li><a href="{{ href | relative_url }}"{% if page.nav == key %} class="is-on"{% endif %}>{{ label }}</a></li>
+  {% endfor %}
+</ul>
